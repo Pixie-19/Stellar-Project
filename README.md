@@ -4,6 +4,12 @@ A React-based decentralized application that connects to the **Stellar Testnet**
 
 ---
 
+## Screenshot
+
+![Stellar Payment dApp](assets/screenshot.png)
+
+---
+
 ## Features
 
 - Connect to Freighter wallet with one click
