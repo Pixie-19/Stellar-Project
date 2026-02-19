@@ -1,0 +1,165 @@
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(36, 30, 27, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #3d3330;
+}
+
+.header-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #e8ddd5;
+  letter-spacing: -0.025em;
+}
+
+.header-badge {
+  font-size: 10px;
+  font-weight: 600;
+  background-color: rgba(201, 169, 110, 0.2);
+  color: #c9a96e;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-wallet-pill {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2a2320;
+  border: 1px solid #3d3330;
+  border-radius: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .header-wallet-pill {
+    display: flex;
+  }
+}
+
+.header-wallet-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #4ade80;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.header-wallet-address {
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  color: #9a8b80;
+}
+
+.header-wallet-divider {
+  width: 1px;
+  height: 1rem;
+  background-color: #3d3330;
+}
+
+.header-wallet-balance {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #c9a96e;
+}
+
+.header-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 150ms ease;
+}
+
+.header-btn-connect {
+  background-color: #cba968;
+  color: #342420;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.header-btn-connect:hover {
+  filter: brightness(1.1);
+}
+
+.header-btn-connected {
+  background-color: rgba(74, 222, 128, 0.15);
+  color: #20cf60;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  cursor: default;
+}
+
+.header-btn-loading {
+  background-color: #2a2320;
+  color: #9a8b80;
+  border: 1px solid #3d3330;
+  cursor: wait;
+}
+
+.header-btn-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.header-btn-inner-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-connected-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background-color: #0e7e37;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+.spinner-circle {
+  opacity: 0.25;
+}
+
+.spinner-path {
+  opacity: 0.75;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

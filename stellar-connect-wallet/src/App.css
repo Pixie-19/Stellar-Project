@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
+  background-color: #1a1210;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Wallet Info Card */
+.wallet-card {
+  background-color: #241e1b;
+  border: 1px solid #3d3330;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.wallet-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #e8ddd5;
+  margin-bottom: 1rem;
+}
+
+.wallet-card-inner {
+  background-color: #2a2320;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.wallet-card-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #9a8b80;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.wallet-card-pubkey {
+  font-size: 0.875rem;
+  color: #e8ddd5;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  word-break: break-all;
+}
+
+.wallet-card-divider {
+  border-top: 1px solid #3d3330;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.wallet-card-balance {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c9a96e;
+}
+
+.wallet-card-balance-unit {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #805435;
+}
+
+.welcome {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 8rem;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.welcome-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: #241e1b;
+  border: 1px solid #3d3330;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.welcome-icon svg {
+  width: 2rem;
+  height: 2rem;
+  color: #c9a96e;
+}
+
+.welcome-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e8ddd5;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-text {
+  color: #9a8b80;
+  font-size: 0.875rem;
+  max-width: 24rem;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #3d3330;
+}
+
+.app-footer-text {
+  font-size: 0.75rem;
+  color: #9a8b80;
 }

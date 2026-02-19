@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { checkConnection, retrievePublicKey, getBalance } from './Freighter';
+import './Header.css';
 
-const Header = () => {
-    const [connected, setConnected] = useState(false);
-    const [publicKey, setPublicKey] = useState('');
-    const [balance, setBalance] = useState('0');
+const Header = ({ connected, setConnected, publicKey, setPublicKey, balance, setBalance }) => {
+    const [loading, setLoading] = useState(false);
 
     const connectWallet = async () => {
+        setLoading(true);
         try {
             const allowed = await checkConnection();
-            if(!allowed) return alert('Permission denied');
+            if(!allowed) {
+                setLoading(false);
+                return alert('Permission denied');
+            }
 
             const key = await retrievePublicKey();
             const bal = await getBalance();
@@ -19,29 +22,60 @@ const Header = () => {
             setConnected(true); 
         } catch (e) {
             console.error(e);
+        } finally {
+            setLoading(false);
         }
     };
 
-    return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 20px', backgroundColor: '#1a1a2e', color: 'white' }}>
-            <div><b>Stellar dApp</b></div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                {publicKey && (
-                    <>
-                        <span>{`${publicKey.slice(0,4)}...${publicKey.slice(-4)}`}</span>
-                        <span style={{ color: '#4ade80' }}>{balance} XLM</span>
-                    </>
-                )}
+    const btnClass = connected
+        ? 'header-btn header-btn-connected'
+        : loading
+            ? 'header-btn header-btn-loading'
+            : 'header-btn header-btn-connect';
 
-                <button
-                    onClick={connectWallet}
-                    disabled={connected}
-                    style={{ padding: '8px 16px', borderRadius: '5px', border: 'none', color: 'white', cursor: connected ? 'default' : 'pointer', backgroundColor: connected ? '#22c55e' : '#3b82f6' }}
-                >
-                    {connected ? 'Connected' : 'Connect Wallet'}
-                </button>
+    return (
+        <header className="header">
+            <div className="header-inner">
+                <div className="header-logo">
+                    <span className="header-title">Stellar Payment dApp</span>
+                    <span className="header-badge">TESTNET</span>
+                </div>
+
+                <div className="header-right">
+                    {connected && publicKey && (
+                        <div className="header-wallet-pill">
+                            <div className="header-wallet-dot"></div>
+                            <span className="header-wallet-address">{`${publicKey.slice(0,6)}...${publicKey.slice(-4)}`}</span>
+                            <div className="header-wallet-divider"></div>
+                            <span className="header-wallet-balance">{balance} XLM</span>
+                        </div>
+                    )}
+
+                    <button
+                        onClick={connectWallet}
+                        disabled={connected || loading}
+                        className={btnClass}
+                    >
+                        {connected ? (
+                            <span className="header-btn-inner">
+                                <div className="header-connected-dot"></div>
+                                Connected
+                            </span>
+                        ) : loading ? (
+                            <span className="header-btn-inner-loading">
+                                <svg className="spinner" viewBox="0 0 24 24">
+                                    <circle className="spinner-circle" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                    <path className="spinner-path" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                                </svg>
+                                Connecting...
+                            </span>
+                        ) : (
+                            'Connect Wallet'
+                        )}
+                    </button>
+                </div>
             </div>
-        </div>
+        </header>
     );
 };
 
