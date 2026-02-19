@@ -6,7 +6,8 @@ A React-based decentralized application that connects to the **Stellar Testnet**
 
 ## Screenshot
 
-![Stellar Payment dApp](assets/screenshot.png)
+<img width="1919" height="963" alt="Screenshot" src="https://github.com/user-attachments/assets/694bb909-0ced-480f-8c13-463f9b9df9db" />
+
 
 ---
 
