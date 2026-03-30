@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/77eeb382-4ee7-4ce2-aa85-9d19e0ef7dff" />
 # 🌠 StellarFund | Decentralized Crowdfunding on Stellar
 A top-tier, full-stack decentralized application (dApp) designed to revolutionize crowdfunding on the **Stellar Testnet**. Powered by **Soroban Smart Contracts**, StellarFund empowers creators to launch visionary projects and enables donors to contribute securely with real-time on-chain transparency.
 
