@@ -1,6 +1,6 @@
 {
-  "name": "stellar-connect-wallet",
-  "version": "0.1.0",
+  "name": "stellar-crowdfund-dapp",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@stellar/freighter-api": "^6.0.1",
@@ -38,8 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.19"
   }
 }
