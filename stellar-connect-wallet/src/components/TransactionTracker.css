@@ -1,0 +1,212 @@
+.tx-tracker {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  animation: slideUp 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tx-tracker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.tx-building::before,
+.tx-simulating::before {
+  background: var(--gradient-primary);
+  animation: shimmer 1.5s infinite;
+  background-size: 200% 100%;
+}
+
+.tx-awaiting::before {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  animation: progressPulse 1.5s infinite;
+}
+
+.tx-submitting::before,
+.tx-pending::before {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  animation: shimmer 1s infinite;
+  background-size: 200% 100%;
+}
+
+.tx-success::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.tx-failed::before,
+.tx-rejected::before {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.tx-tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.tx-tracker-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tx-tracker-icon {
+  font-size: 1.1rem;
+}
+
+.tx-tracker-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tx-tracker-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border-default);
+  border-top-color: var(--accent-secondary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.tx-tracker-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.tx-tracker-close:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Steps */
+.tx-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.tx-step {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  position: relative;
+}
+
+.tx-step-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+  z-index: 1;
+}
+
+.tx-step-done .tx-step-dot {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.tx-step-current .tx-step-dot {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.tx-step-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  animation: pulse 1.5s ease infinite;
+}
+
+.tx-step-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.tx-step-done .tx-step-label {
+  color: var(--accent-tertiary);
+}
+
+.tx-step-current .tx-step-label {
+  color: var(--text-primary);
+}
+
+.tx-step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border-default);
+  margin: 0 2px;
+  transition: background var(--transition-base);
+}
+
+.tx-step-line-done {
+  background: var(--accent-primary);
+}
+
+.tx-tracker-message {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  line-height: 1.5;
+}
+
+.tx-tracker-hash {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.tx-hash-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.tx-hash-link {
+  font-size: 0.78rem;
+  color: var(--accent-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast);
+}
+
+.tx-hash-link:hover {
+  color: var(--accent-tertiary);
+}
