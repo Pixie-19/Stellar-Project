@@ -6,12 +6,13 @@
   overflow: hidden;
   transition: all var(--transition-base);
   animation: slideUp 0.5s ease backwards;
+  box-shadow: var(--shadow-sm);
 }
 
 .campaign-card:hover {
   border-color: var(--border-accent);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-strong);
+  transform: translateY(-6px) scale(1.02);
 }
 
 .campaign-card-complete {

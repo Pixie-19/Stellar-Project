@@ -70,12 +70,12 @@ const Header = ({ connected, setConnected, publicKey, setPublicKey, balance, set
         <div className="header-logo">
           <div className="header-logo-icon">
             <svg viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="14" stroke="url(#logo-grad)" strokeWidth="2.5" />
-              <path d="M16 6 L22 14 L16 26 L10 14 Z" fill="url(#logo-grad)" opacity="0.9" />
+              <path d="M16 2 L28 10 L28 22 L16 30 L4 22 L4 10 Z" stroke="url(#logo-grad)" strokeWidth="2.5" />
+              <path d="M16 11 L24 16 L16 21 L8 16 Z" fill="url(#logo-grad)" opacity="0.8" />
               <defs>
                 <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32">
-                  <stop offset="0%" stopColor="#7c3aed" />
-                  <stop offset="100%" stopColor="#c084fc" />
+                  <stop offset="0%" stopColor={ "var(--accent-secondary)" } />
+                  <stop offset="100%" stopColor={ "var(--accent-primary)" } />
                 </linearGradient>
               </defs>
             </svg>

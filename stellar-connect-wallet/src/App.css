@@ -49,12 +49,12 @@
   align-items: center;
   gap: 6px;
   padding: 6px 16px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.25);
+  background: rgba(212, 255, 86, 0.08);
+  border: 1px solid rgba(212, 255, 86, 0.2);
   border-radius: var(--radius-full);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--accent-secondary);
+  color: var(--accent-primary);
   margin-bottom: 20px;
 }
 

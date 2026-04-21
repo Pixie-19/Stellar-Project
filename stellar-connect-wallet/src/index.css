@@ -1,55 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('./components/Button.css');
 
 :root {
-  /* Color Palette - Cosmic Purple/Dark Theme */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-card: #16161f;
-  --bg-card-hover: #1c1c28;
-  --bg-elevated: #1e1e2e;
-  --bg-input: #1a1a26;
+  /* Color Palette - Dark & Vibrant Lime */
+  --bg-primary: #050806;
+  --bg-secondary: #0d100e;
+  --bg-card: #101411;
+  --bg-card-hover: #151a16;
+  --bg-elevated: #1a1f1b;
+  --bg-input: #0e120f;
 
-  --text-primary: #e8e6f0;
-  --text-secondary: #9896a8;
-  --text-muted: #6b6980;
-  --text-label: #b0aec0;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  --text-label: #c0c0c0;
 
-  --accent-primary: #7c3aed;
-  --accent-secondary: #a855f7;
-  --accent-tertiary: #c084fc;
-  --accent-glow: rgba(124, 58, 237, 0.25);
-  --accent-glow-strong: rgba(124, 58, 237, 0.4);
+  --accent-primary: #d4ff56;
+  --accent-secondary: #b8e040;
+  --accent-tertiary: #a2c238;
+  --accent-glow: rgba(212, 255, 86, 0.2);
+  --accent-glow-strong: rgba(212, 255, 86, 0.35);
 
-  --success: #10b981;
-  --success-bg: rgba(16, 185, 129, 0.1);
-  --success-border: rgba(16, 185, 129, 0.3);
-  --warning: #f59e0b;
-  --warning-bg: rgba(245, 158, 11, 0.1);
-  --warning-border: rgba(245, 158, 11, 0.3);
-  --error: #ef4444;
-  --error-bg: rgba(239, 68, 68, 0.1);
-  --error-border: rgba(239, 68, 68, 0.3);
-  --info: #3b82f6;
-  --info-bg: rgba(59, 130, 246, 0.1);
-  --info-border: rgba(59, 130, 246, 0.3);
-  --pending: #f97316;
-  --pending-bg: rgba(249, 115, 22, 0.1);
+  --success: #56ff9a;
+  --success-bg: rgba(86, 255, 154, 0.1);
+  --success-border: rgba(86, 255, 154, 0.3);
+  --warning: #ffdd56;
+  --warning-bg: rgba(255, 221, 86, 0.1);
+  --warning-border: rgba(255, 221, 86, 0.3);
+  --error: #ff5656;
+  --error-bg: rgba(255, 86, 86, 0.1);
+  --error-border: rgba(255, 86, 86, 0.3);
+  --info: #56cfff;
+  --info-bg: rgba(86, 207, 255, 0.1);
+  --info-border: rgba(86, 207, 255, 0.3);
+  --pending: #ff9a56;
+  --pending-bg: rgba(255, 154, 86, 0.1);
 
-  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(255, 255, 255, 0.05);
   --border-default: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.15);
-  --border-accent: rgba(124, 58, 237, 0.4);
+  --border-accent: rgba(212, 255, 86, 0.4);
 
-  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
-  --gradient-card: linear-gradient(145deg, rgba(22,22,31,0.9) 0%, rgba(18,18,26,0.95) 100%);
-  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 60%);
-  --gradient-hero: linear-gradient(180deg, rgba(124,58,237,0.08) 0%, transparent 50%);
+  --gradient-primary: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  --gradient-card: linear-gradient(145deg, rgba(16,20,17,0.9) 0%, rgba(13,16,14,0.95) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(212,255,86,0.1) 0%, transparent 60%);
+  --gradient-hero: linear-gradient(180deg, rgba(212,255,86,0.05) 0%, transparent 50%);
 
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-  --shadow-glow: 0 0 20px rgba(124,58,237,0.15);
-  --shadow-glow-strong: 0 0 40px rgba(124,58,237,0.25);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 20px rgba(212,255,86,0.1);
+  --shadow-glow-strong: 0 0 40px rgba(212,255,86,0.2);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -74,7 +75,8 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg-primary);
+  background-color: var(--bg-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%231a1a26' fill-opacity='0.1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v19L13 41.5 0 34V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

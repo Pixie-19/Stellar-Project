@@ -1,6 +1,6 @@
 #![no_std]
 use soroban_sdk::{
-    contract, contractimpl, contracttype, symbol_short, token, Address, Env, Map, String, Vec,
+    contract, contractimpl, contracttype, symbol_short, token, Address, Env, String, Vec,
     log,
 };
 
@@ -169,6 +169,23 @@ impl CrowdfundContract {
             .persistent()
             .get(&DataKey::CampaignCount)
             .unwrap_or(0)
+    }
+
+    /// Get multiple campaigns (pagination)
+    pub fn get_campaigns(env: Env, offset: u32, limit: u32) -> Vec<Campaign> {
+        let count = Self::get_campaign_count(env.clone());
+        let mut campaigns = Vec::new(&env);
+        
+        let start = offset + 1;
+        let end = core::cmp::min(start + limit, count + 1);
+        
+        for id in start..end {
+            if let Some(campaign) = env.storage().persistent().get(&DataKey::Campaign(id)) {
+                campaigns.push_back(campaign);
+            }
+        }
+        
+        campaigns
     }
 
     /// Get donor's contribution to a campaign

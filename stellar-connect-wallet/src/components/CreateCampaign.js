@@ -148,7 +148,7 @@ const CreateCampaign = ({ onCreateCampaign, connected }) => {
 
         <button
           type="submit"
-          className="create-submit-btn"
+          className="btn btn-primary btn-lg create-submit-btn"
           disabled={!connected || !title || !description || !targetAmount}
         >
           {!connected ? (
